@@ -1,0 +1,66 @@
+
+.etiqueta{
+
+    margin: 1rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 2rem;
+
+    z-index: -1;
+
+}
+.productos{
+
+    display: flex;
+    flex-direction: column;
+
+    height: 480px;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+
+    background-color: #E7ECEE;
+    box-shadow: 3px 7px #969C9F;
+
+    cursor: pointer;
+    transition: 0.5s; 
+
+    overflow: hidden;
+
+    /* Al hacer el evento de hover todo el producto se sobre pone sobre la barra de navegacion */
+   /* z-index: -1;*/
+
+}
+
+.productos:hover{
+
+    scale: 1.1;
+    
+}
+
+.nombreZapato{
+    width: 100%;
+    margin: .5rem  auto;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.imgZapatos{
+
+    width: 20rem;
+    height: 20rem;
+    margin: 0 1rem 0 1.7rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+
+.precioImg{
+    margin-left: 2rem;
+
+}
+.tallaImg{
+    margin-left: 2rem;
+    
+}

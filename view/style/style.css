@@ -1,0 +1,70 @@
+nav{
+
+    display: flex;
+    align-items: center;
+
+    background-color: #1F1B1A;
+    height: 5rem;
+    width: 100%;
+    position: sticky;
+    top: 0.4px;
+    margin: auto;
+    
+    z-index: 1;
+    
+
+}
+
+.logo{
+
+    font-size: 2.3rem;
+    margin-right:1rem ;
+    
+}
+
+
+/*  Estilo de los enlaces del menu de navegacion*/
+.enlaces{
+
+    width: 80%;
+    height: 4rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+    background-color: white;
+    margin: auto;
+}
+
+.enlaces a{
+
+    /* Cambio el tamaño del padding inferior para que se vea bien al momento de poner el mouse sobre el cursor */
+
+    text-decoration: none;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: .5rem;
+    padding-top: 1rem;
+
+    
+}
+
+/* Evento al poner el mouse sobre los en enlaces del menu de navegacion*/
+.enlaces li a:hover {
+
+    border-bottom: solid #6d0d06 1.5px;
+}
+
+.bienvenida{
+    width: 80%;
+    margin: auto;
+
+    font-size: 2rem;
+}
+
+
+
+
