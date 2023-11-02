@@ -26,7 +26,7 @@
 
         <li><a href="../index.php" >Inicio</a></li>
         <li><a href="view/hombre.php" >Hombre</a></li>
-        <li><a href="#" >Mujer</a></li>
+        <li><a href="mujer.php">Mujer</a></li>
         <li><a href="#" >Ofertas</a></li>
         <li><a href="#" >Quienes somos</a></li>
 

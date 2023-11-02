@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zapatos Hombres</title>
+    <title>Zapatos mujer</title>
 
     <link rel="stylesheet" href="style/hombre.css">
 
@@ -25,7 +25,7 @@ require_once("../database/conexion.php");
             require_once("../database/conexion.php");
 
 
-            $sql="SELECT * FROM hombre";
+            $sql="SELECT * FROM mujer";
 
             $sentencia=$conexion->prepare($sql);
             $sentencia->execute();
@@ -40,7 +40,7 @@ require_once("../database/conexion.php");
     
                <h1 class="nombreZapato"><?php print_r($fila["Nombre"]);?></h1> 
                 
-                <img class="imgZapatos" src="../imgdeProductos/imgHombre/<?php echo $fila["Imagen"];?>" alt="">
+                <img class="imgZapatos" src="../imgdeProductos/imgMujer/<?php echo $fila["Imagen"];?>" alt="">
                 <p class="precioImg"><b>Precio: <?php print_r($fila["Precio"]);?></b></p>
                 <p class="tallaImg"><b>Talla: <?php print_r($fila["Talla"]);?></b></p>
 

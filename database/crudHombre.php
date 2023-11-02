@@ -1,23 +1,24 @@
 
 <?php
-require_once("conexion.php")
+require_once("conexion.php");
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud Reystore</title>
-    <link rel="stylesheet" href="crud.css">
+    <title>Crud Hombres</title>
+    <link rel="stylesheet" href="styleDatabase/crudHombre.css">
 </head>
+
 <body>
 
 
 
 
 
-<form action="crud.php" method="post"  enctype="multipart/form-data" class="formulario">
+<form action="crudHombre.php" method="post"  enctype="multipart/form-data" class="formulario">
 
 
 <div>
@@ -25,8 +26,8 @@ require_once("conexion.php")
     <input type="text" name="txtNombre" id="txtNombre"  placeholder="Nombre">
 </div>
 
-<div>
 
+<div>
     <label for="txtTalla">Talla:</label> <br>
     <input type="text" name="txtTalla" id="txtTalla"  placeholder="Talla">
 </div>
@@ -38,9 +39,12 @@ require_once("conexion.php")
 </div>
 
 
-<div><label for="txtimagen">Imagen:</label> <br>
+<div>
+    <label for="txtimagen">Imagen:</label> <br>
     <input type="file" name="txtImagen" id="txtImagen"  placeholder="Imagen" class="imagenCargada">
 </div>
+
+
 <div>
 
     <input type="submit" placeholder="Enviar" value="Enviar" name="enviar">
@@ -50,9 +54,6 @@ require_once("conexion.php")
 </div>
 
 
-
-
-    
 
 
 
@@ -95,10 +96,10 @@ if($_POST){
             echo"Solo se permiten archivos jpeg, npg, gif";
         }else{
 
-            $peticion= "INSERT INTO `hombre` (`Id`, `Nombre`, `Talla`, `Imagen`, `Precio`) VALUES (NULL, '$nombre', '$talla', '$imagen', '$precio')";
+            $peticion= "INSERT INTO `hombre` (`Id`, `Nombre`, `Talla`, `Imagen`, `Precio`) VALUES ( '' , '$nombre', '$talla', '$imagen', '$precio')";
             $conexion->exec($peticion);
 
-                move_uploaded_file($ubicacionImg,"../imgHombre/".$imagen);
+            move_uploaded_file($ubicacionImg,"../imgdeProductos/imgHombre/".$imagen);
         } ?>
 
      <script>
@@ -114,7 +115,7 @@ if($_POST){
      }())
      </script>   
 
-    <?php   
+<?php   
 
 
     }
@@ -129,7 +130,7 @@ if($_POST){
 
 
 
-<!--  MOSTRAR EL CONTENIDO DE LA BASE DE DATOS      -->
+ <!-- MOSTRAR EL CONTENIDO DE LA BASE DE DATOS  de la tabla hombres    
 
 
 <table style="margin-left: 20rem;">
@@ -142,7 +143,8 @@ if($_POST){
                 <th>Precio</th>
             </tr>
     
-            <?php 
+            <?php /*
+
             require_once("conexion.php");
 
 
@@ -167,12 +169,12 @@ if($_POST){
 
 
                 
-            <?php }?>
+            <?php }   */ ?>
 
             <br>
     
-        </table>
-
+     </table>
+            -->
 
 </body>
 </html>

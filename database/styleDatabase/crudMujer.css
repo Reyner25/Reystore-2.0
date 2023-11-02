@@ -1,0 +1,48 @@
+body {
+    margin:10px;
+
+}
+
+.formulario{
+
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+   width: 20%;
+   margin: 5px auto;
+   padding: 2rem;
+    background-color: #4a1f57;
+
+    border-radius: 10px;
+    justify-content: center;
+
+}
+
+
+.formulario label{
+
+    color: white;
+    
+}
+
+.formulario input{
+
+    border: none;
+    border-radius: 6px;
+    height: 2rem;
+    margin-top: .3rem;
+    
+}
+
+.formulario button{
+
+    border-radius: 6px;
+    height: 2rem;
+    border: none;
+    
+}
+
+.imagenCargada{
+
+    height:4rem ;
+}

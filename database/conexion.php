@@ -10,8 +10,6 @@ try{
 
     $conexion= new PDO("mysql: host=$serveridor; dbname=$dbName;",$user,$password);
 
-   
-
 }
 
 catch(Exception $e){
