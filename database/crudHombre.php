@@ -1,8 +1,4 @@
 
-<?php
-require_once("conexion.php");
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,10 +11,7 @@ require_once("conexion.php");
 <body>
 
 
-
-
-
-<form action="crudHombre.php" method="post"  enctype="multipart/form-data" class="formulario">
+<form action="validarDatosHombres.php" method="post"  enctype="multipart/form-data" class="formulario">
 
 
 <div>
@@ -47,134 +40,62 @@ require_once("conexion.php");
 
 <div>
 
-    <input type="submit" placeholder="Enviar" value="Enviar" name="enviar">
-    <button type="button">Modificar</button>
-    <button type="button">Cancelar</button>
+    <button type="submit" placeholder="Enviar" value="Enviar" name="enviar">Enviar</button>
+
 
 </div>
 
 
-
-
-
-
-
 </form>
 
-
 <br>
-<br> 
-
-
-<?php
-
-//codigo PHP
-
-
-if($_POST){
-
-    echo "Contenido del envio";
-
-    $nombre= $_POST["txtNombre"];
-    print_r($nombre) ;
-
-    $talla= $_POST["txtTalla"];
-    print_r("La talla es: ".$talla);
-
-    $precio= $_POST["txtPrecio"];
-    print_r("El precio es: ".$precio);
-
-
-    if( empty($_POST["txtimagen"])){
-
-        $imagen= $_FILES["txtImagen"]['name'];
-        $ubicacionImg=$_FILES["txtImagen"]['tmp_name'];
-        $tipoImg= $_FILES["txtImagen"]['type'];
-
-        if(!(strpos($tipoImg,'gif') || strpos($tipoImg,'jpeg') || strpos($tipoImg,'npg')) ){
-
-            echo"Solo se permiten archivos jpeg, npg, gif";
-        }else{
-
-            $peticion= "INSERT INTO `hombre` (`Id`, `Nombre`, `Talla`, `Imagen`, `Precio`) VALUES ( '' , '$nombre', '$talla', '$imagen', '$precio')";
-            $conexion->exec($peticion);
-
-            move_uploaded_file($ubicacionImg,"../imgdeProductos/imgHombre/".$imagen);
-        } ?>
-
-     <script>
-
-     (function(){
-
-        var not=function(){
-            window.history.replaceState(null,null, window.location.pathname);
-   
-                }       
-        setTimeout(not, 0)    
-
-     }())
-     </script>   
-
-<?php   
-
-
-    }
-
-}
-
-?>
-
-
-
-
-
-
-
- <!-- MOSTRAR EL CONTENIDO DE LA BASE DE DATOS  de la tabla hombres    
+ <!-- MOSTRAR EL CONTENIDO DE LA BASE DE DATOS  de la tabla hombres  -->   
 
 
 <table style="margin-left: 20rem;">
+           
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Talla</th>
+            <th>Imagen</th>
+            <th>Precio</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+        <?php 
+
+        require_once("conexion.php");
+
+        $sql="SELECT * FROM hombre";
+        $sentencia=$conexion->prepare($sql);
+        $sentencia->execute();
+        $resultado=$sentencia->fetchAll();
+
+
+        foreach($resultado as $fila){?> 
             
-            <tr>
-                <th>Id</th>
-                <th>nombre</th>
-                <th>talla</th>
-                <th>Imagen</th>
-                <th>Precio</th>
+        <tbody>
+            <tr class="">
+                    <td id="idProductos"><?php echo $fila["Id"]; ?></td>
+                    <td ><?php echo $fila["Nombre"]; ?></td>
+
+                    <td id="talla"><?php  print_r($fila["Talla"]);?></td>
+                    <td><img class="imagenTabla" src="../imgdeProductos/imgHombre/<?php echo $fila["Imagen"]?>" alt=""></td>
+
+                    <td><?php  print_r($fila["Precio"]);?></td>
+                    <td> <a  class="modificar" href="modificarProductoHombre.php?id=<?php echo $fila["Id"];?>">Modificar</a></td>
+                    
             </tr>
-    
-            <?php /*
+        </tbody>
 
-            require_once("conexion.php");
+        <?php  }  ?>
 
-
-            $sql="SELECT * FROM hombre";
-
-            $sentencia=$conexion->prepare($sql);
-            $sentencia->execute();
-
-            $resultado=$sentencia->fetchAll();
+        
+</table>
 
 
-            foreach($resultado as $fila){?> 
-            
-                <tr>
-                    <th><?php echo $fila["Id"]; ?></th>
-                    <th><?php echo $fila["Nombre"]; ?></th>
-                    <th><?php  print_r($fila["Talla"]);?></th>
-                    <td style="width: 80px;"><img style="width: 80px;" src="../imgHombre/<?php echo $fila["Imagen"]?>" alt=""></td>
-                   <!-- <th><?php  //print_r($fila["Imagen"]);?></th>-->
-                    <th><?php  print_r($fila["Precio"]);?></th>
-                </tr>
-
-
-                
-            <?php }   */ ?>
-
-            <br>
-    
-     </table>
-            -->
 
 </body>
 </html>

@@ -38,11 +38,53 @@ body {
 
     border-radius: 6px;
     height: 2rem;
+    width: 4rem;
     border: none;
+    background-color: rgb(52, 233, 52);
     
 }
 
-.imagenCargada{
 
-    height:4rem ;
+/* tabla*/
+.imagenTabla{
+
+    width: 95px; 
+    height: 80px;
+    margin:1rem;
+}
+
+table thead tr{
+
+    background-color: rgb(59, 59, 59);
+    height: 3rem;
+}
+
+
+
+table tbody tr td{
+
+    text-align: center;
+    padding: 1rem;
+}
+
+td{
+
+    border-bottom: solid 5px  rgb(82, 82, 82);
+    background-color: rgb(85, 88, 97);
+ 
+}
+
+.filasCuerposhover{
+
+    background-color: rgb(99, 98, 98);
+
+}
+
+.modificar{
+
+    border-radius: 10px ;
+    background-color: rgb(200, 228, 41);
+    padding: .8rem ;
+    color: rgb(17, 28, 92);
+    text-decoration: none;
 }

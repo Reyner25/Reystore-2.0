@@ -6,7 +6,8 @@
     grid-template-columns: 1fr 1fr 1fr ;
     gap: 2rem;
 
-    z-index: -1;
+/* Al hacer el evento de hover todo el elemento de productos se sobre pone sobre la barra de navegacion  por eso el z-index  */
+    z-index: -10;
 
 }
 .productos{
@@ -28,7 +29,7 @@
     overflow: hidden;
 
     /* Al hacer el evento de hover todo el producto se sobre pone sobre la barra de navegacion */
-   /* z-index: -1;*/
+   
 
 }
 
